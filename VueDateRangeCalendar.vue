@@ -4,11 +4,13 @@
 
 <script>
 const moment = require('moment');
+try {
 window.$ = window.jQuery = require('jquery');
 require('jquery-ui-dist/jquery-ui');
 require('jquery-ui-touch-punch/jquery.ui.touch-punch');
 require('./calendar');
 import Vue from 'vue';
+} catch(e) {}
 
 export default {
     mounted() {
