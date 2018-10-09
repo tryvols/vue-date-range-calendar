@@ -5,6 +5,7 @@
  * Email: angelo@afreeux.com
  */
 
+const moment = require('moment');
 
 ;( function( $, window, undefined ) {
 	
