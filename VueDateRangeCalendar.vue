@@ -8,11 +8,15 @@ window.$ = window.jQuery = require('jquery');
 require('jquery-ui-dist/jquery-ui');
 require('jquery-ui-touch-punch/jquery.ui.touch-punch');
 require('./calendar');
+import Vue from 'vue';
 
 export default {
     mounted() {
-        this.init();
-        $(this.$el).rangeCalendar(this.options);
+        const vm = this;
+        Vue.nextTick(() => {
+            vm.init();
+            $(this.$el).rangeCalendar(this.options);
+        });
     },
     props: {
         options: {
