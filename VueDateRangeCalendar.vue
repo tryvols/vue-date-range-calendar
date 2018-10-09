@@ -25,7 +25,6 @@ export default {
     },
     methods: {
         init() {
-            console.log(this.options); // eslint-ignore-line
             return {
                 lang: this.options.lang || 'en',
                 theme: this.options.theme || 'default-theme',
