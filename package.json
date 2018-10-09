@@ -1,0 +1,31 @@
+{
+  "name": "vue-date-range-calendar",
+  "version": "1.0.0",
+  "description": "Vue version on jquery date range calendar plugin",
+  "main": "VueDateRangeCalendar.js",
+  "dependencies": {
+    "jquery": "^1.11.3",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-ui-touch-punch": "^0.2.3",
+    "moment": "^2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryvols/vue-date-range-calendar.git"
+  },
+  "keywords": [
+    "date",
+    "range",
+    "calendar"
+  ],
+  "author": "TryVols",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tryvols/vue-date-range-calendar/issues"
+  },
+  "homepage": "https://github.com/tryvols/vue-date-range-calendar#readme"
+}
