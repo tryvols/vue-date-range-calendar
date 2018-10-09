@@ -63,9 +63,6 @@ export default {
 .range-calendar .calendar .cell .day.ferial {font-weight: bold;}
 .range-calendar .calendar .cell .month.first {opacity: 1;}
 .range-calendar .calendar .cell:hover { background-color: rgba(0,0,0,.0);  color: #888;  }
-.range-calendar .calendar .cell:hover .day-number {}
-.range-calendar .calendar .cell:hover .day{ }
-.range-calendar .calendar .cell:hover .month { }
 .range-calendar .calendar .cell.selected {background: transparent;color: #fff;border-right: 1px solid rgba(0, 0, 0, 0.04);}
 .range-calendar .calendar .cell.selected.last {border: none !important;}
 .range-calendar .calendar .cell.selected .day-number, .calendar .cell.ui-selecting .day-number { z-index: 2; position: relative;}
@@ -138,7 +135,6 @@ export default {
 .cyano-theme .months .cell {color: rgba(0, 0, 0, 0.6) ;}
 .cyano-theme .months .cell .month-name {color: #00CCFF ;}
 .cyano-theme .months .cell.selected {background-color: #00CCFF ;}
-.cyano-theme .months .cell.selected .month-name {}
 .cyano-theme .calendar {background-color: transparent ;}
 .cyano-theme .calendar .cell  {color: rgba(0, 0, 0, 0.4) ;}
 .cyano-theme .calendar .cell .day-number {color: #00CCFF ;}
