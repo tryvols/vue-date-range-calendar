@@ -12,11 +12,7 @@ import Vue from 'vue';
 
 export default {
     mounted() {
-        const vm = this;
-        Vue.nextTick(() => {
-            vm.init(vm);
-            $(vm.$el).rangeCalendar(vm.options);
-        });
+        $(this.$el).rangeCalendar(this.init());
     },
     props: {
         options: {
@@ -25,21 +21,23 @@ export default {
         }
     },
     methods: {
-        init(vm) {
-            vm.options.lang = 'en' || vm.options.lang;
-            vm.options.theme = 'default-theme' || vm.options.theme;
-            vm.options.themeContext = vm;
-            vm.options.startDate = moment() || vm.options.startDate;
-            vm.options.endDate = moment().add('months', 12) || vm.options.endDate;
-            vm.options.start = '+7' || vm.options.start;
-            vm.options.startRangeWidth = 3 || vm.options.startRangeWidth;
-            vm.options.minRangeWidth = 1 || vm.options.minRangeWidth;
-            vm.options.maxRangeWidth = 14 || vm.options.maxRangeWidth;
-            vm.options.weekends = true || vm.options.weekends;
-            vm.options.autoHideMonths = false || vm.options.autoHideMonths;
-            vm.options.visible = true || vm.options.visible;
-            vm.options.trigger = null || vm.options.trigger;
-            vm.options.changeRangeCallback = vm.onChange;
+        init() {
+            return options = {
+                lang = 'en' || this.options.lang,
+                theme = 'default-theme' || this.options.theme,
+                themeContext = this,
+                startDate = moment() || this.options.startDate,
+                endDate = moment().add('months', 12) || this.options.endDate,
+                start = '+7' || this.options.start,
+                startRangeWidth = 3 || this.options.startRangeWidth,
+                minRangeWidth = 1 || this.options.minRangeWidth,
+                maxRangeWidth = 14 || this.options.maxRangeWidth,
+                weekends = true || this.options.weekends,
+                autoHideMonths = false || this.options.autoHideMonths,
+                visible = true || this.options.visible,
+                trigger = null || this.options.trigger,
+                changeRangeCallback = this.onChange
+            }
         },
         onChange(data) {
             this.$emit('change', data);
@@ -261,7 +259,7 @@ export default {
 
 
 .range-bar .ui-resizable-handle {
-background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAbCAYAAAEog86bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozOEM3RUEzMjIyQUUxMUUzQjQ5NUMwMEM3OEVEMzc0MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozOEM3RUEzMzIyQUUxMUUzQjQ5NUMwMEM3OEVEMzc0MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU5Q0Q4QzdGMjI3RjExRTNCNDk1QzAwQzc4RUQzNzQwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU5Q0Q4QzgwMjI3RjExRTNCNDk1QzAwQzc4RUQzNzQwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+XfsRugAAAGZJREFUeNpi+P//PwMTAxAgCIAAYoCJ/YeLMQIEECNIDKECJgcCAAHEgMUINAIggOC6kU3A4PzHKYPCYUSRAQgg/Eb/J2garTmMWGUAAgzF1Tj1Y5P4T4yO/0QZNWgkGJElGIk2CgB+4BtJMclJ0wAAAABJRU5ErkJggg==');
+background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAbCAYAAAEog86bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAthisS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozOEM3RUEzMjIyQUUxMUUzQjQ5NUMwMEM3OEVEMzc0MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozOEM3RUEzMzIyQUUxMUUzQjQ5NUMwMEM3OEVEMzc0MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU5Q0Q4QzdGMjI3RjExRTNCNDk1QzAwQzc4RUQzNzQwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU5Q0Q4QzgwMjI3RjExRTNCNDk1QzAwQzc4RUQzNzQwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+XfsRugAAAGZJREFUeNpi+P//PwMTAxAgCIAAYoCJ/YeLMQIEECNIDKECJgcCAAHEgMUINAIggOC6kU3A4PzHKYPCYUSRAQgg/Eb/J2garTmMWGUAAgzF1Tj1Y5P4T4yO/0QZNWgkGJElGIk2CgB+4BtJMclJ0wAAAABJRU5ErkJggg==');
 }
 
 
