@@ -2,7 +2,7 @@
   "name": "vue-date-range-calendar",
   "version": "1.0.0",
   "description": "Vue version on jquery date range calendar plugin",
-  "main": "VueDateRangeCalendar.js",
+  "main": "index.js",
   "devDependencies": {},
   "peerDependencies": {
     "jquery": "*",
