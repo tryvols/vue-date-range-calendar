@@ -1,4 +1,4 @@
-# Slick for Vue.js
+# Date range calendar for Vue.js
 
 ## Vue support
 
