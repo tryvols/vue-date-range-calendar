@@ -58,5 +58,5 @@ new Vue({
 If you need, you can import calendar styles too:
 
 ```javascript
-import `node_modules/slick-carousel/vue-date-range-calendar/calendar.css`;
+import `node_modules/vue-date-range-calendar/calendar.module.css`;
 ```
