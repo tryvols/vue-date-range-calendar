@@ -14,8 +14,8 @@ export default {
     mounted() {
         const vm = this;
         Vue.nextTick(() => {
-            vm.init();
-            $(this.$el).rangeCalendar(this.options);
+            vm.init(vm);
+            $(vm.$el).rangeCalendar(vm.options);
         });
     },
     props: {
@@ -25,21 +25,21 @@ export default {
         }
     },
     methods: {
-        init() {
-            this.options.lang = 'en' || this.options.lang;
-            this.options.theme = 'default-theme' || this.options.theme;
-            this.options.themeContext = this;
-            this.options.startDate = moment() || this.options.startDate;
-            this.options.endDate = moment().add('months', 12) || this.options.endDate;
-            this.options.start = '+7' || this.options.start;
-            this.options.startRangeWidth = 3 || this.options.startRangeWidth;
-            this.options.minRangeWidth = 1 || this.options.minRangeWidth;
-            this.options.maxRangeWidth = 14 || this.options.maxRangeWidth;
-            this.options.weekends = true || this.options.weekends;
-            this.options.autoHideMonths = false || this.options.autoHideMonths;
-            this.options.visible = true || this.options.visible;
-            this.options.trigger = null || this.options.trigger;
-            this.options.changeRangeCallback = this.onChange;
+        init(vm) {
+            vm.options.lang = 'en' || vm.options.lang;
+            vm.options.theme = 'default-theme' || vm.options.theme;
+            vm.options.themeContext = vm;
+            vm.options.startDate = moment() || vm.options.startDate;
+            vm.options.endDate = moment().add('months', 12) || vm.options.endDate;
+            vm.options.start = '+7' || vm.options.start;
+            vm.options.startRangeWidth = 3 || vm.options.startRangeWidth;
+            vm.options.minRangeWidth = 1 || vm.options.minRangeWidth;
+            vm.options.maxRangeWidth = 14 || vm.options.maxRangeWidth;
+            vm.options.weekends = true || vm.options.weekends;
+            vm.options.autoHideMonths = false || vm.options.autoHideMonths;
+            vm.options.visible = true || vm.options.visible;
+            vm.options.trigger = null || vm.options.trigger;
+            vm.options.changeRangeCallback = vm.onChange;
         },
         onChange(data) {
             this.$emit('change', data);
