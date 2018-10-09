@@ -17,26 +17,28 @@ export default {
     props: {
         options: {
             type: Object,
-            default: () => {}
+            default () {
+                return {};
+            }
         }
     },
     methods: {
         init() {
             console.log(this.options); // eslint-ignore-line
             return {
-                lang: 'en' || this.options.lang,
-                theme: 'default-theme' || this.options.theme,
+                lang: this.options.lang || 'en',
+                theme: this.options.theme || 'default-theme',
                 themeContext: this,
-                startDate: moment() || this.options.startDate,
-                endDate: moment().add('months', 12) || this.options.endDate,
-                start: '+7' || this.options.start,
-                startRangeWidth: 3 || this.options.startRangeWidth,
-                minRangeWidth: 1 || this.options.minRangeWidth,
-                maxRangeWidth: 14 || this.options.maxRangeWidth,
-                weekends: true || this.options.weekends,
-                autoHideMonths: false || this.options.autoHideMonths,
-                visible: true || this.options.visible,
-                trigger: null || this.options.trigger,
+                startDate: this.options.startDate || moment(),
+                endDate: this.options.endDate || moment().add('months', 12),
+                start: this.options.start || '+7',
+                startRangeWidth: this.options.startRangeWidth || 3,
+                minRangeWidth: this.options.minRangeWidth || 1,
+                maxRangeWidth: this.options.maxRangeWidth || 14,
+                weekends: this.options.weekends || true,
+                autoHideMonths: this.options.autoHideMonths || false,
+                visible: this.options.visible || true,
+                trigger: this.options.trigger || null,
                 changeRangeCallback: this.onChange
             }
         },
