@@ -23,20 +23,20 @@ export default {
     methods: {
         init() {
             return options = {
-                lang = 'en' || this.options.lang,
-                theme = 'default-theme' || this.options.theme,
-                themeContext = this,
-                startDate = moment() || this.options.startDate,
-                endDate = moment().add('months', 12) || this.options.endDate,
-                start = '+7' || this.options.start,
-                startRangeWidth = 3 || this.options.startRangeWidth,
-                minRangeWidth = 1 || this.options.minRangeWidth,
-                maxRangeWidth = 14 || this.options.maxRangeWidth,
-                weekends = true || this.options.weekends,
-                autoHideMonths = false || this.options.autoHideMonths,
-                visible = true || this.options.visible,
-                trigger = null || this.options.trigger,
-                changeRangeCallback = this.onChange
+                lang: 'en' || this.options.lang,
+                theme: 'default-theme' || this.options.theme,
+                themeContext: this,
+                startDate: moment() || this.options.startDate,
+                endDate: moment().add('months', 12) || this.options.endDate,
+                start: '+7' || this.options.start,
+                startRangeWidth: 3 || this.options.startRangeWidth,
+                minRangeWidth: 1 || this.options.minRangeWidth,
+                maxRangeWidth: 14 || this.options.maxRangeWidth,
+                weekends: true || this.options.weekends,
+                autoHideMonths: false || this.options.autoHideMonths,
+                visible: true || this.options.visible,
+                trigger: null || this.options.trigger,
+                changeRangeCallback: this.onChange
             }
         },
         onChange(data) {
