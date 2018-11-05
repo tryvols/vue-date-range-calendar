@@ -42,8 +42,8 @@ export default {
                 changeRangeCallback: this.onChange
             }
         },
-        onChange(data) {
-            this.$emit('change', data);
+        onChange(target, range) {
+            this.$emit('change', { target, range });
         }
     }
 }
